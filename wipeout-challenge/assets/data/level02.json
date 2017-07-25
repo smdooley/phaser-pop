@@ -1,0 +1,82 @@
+{
+  "background": "kitchen",
+  "germs": [
+    {
+      "asset": "germs",
+      "health": 10,
+      "frame": 0,
+      "x": 150,
+      "y": 150
+    },
+    {
+      "asset": "germs",
+      "health": 5,
+      "frame": 1,
+      "x": 300,
+      "y": 150
+    },
+    {
+      "asset": "germs",
+      "health": 5,
+      "frame": 2,
+      "x": 450,
+      "y": 150
+    },
+    {
+      "asset": "germs",
+      "health": 5,
+      "frame": 3,
+      "x": 600,
+      "y": 150
+    },
+    {
+      "asset": "germs",
+      "health": 5,
+      "frame": 4,
+      "x": 750,
+      "y": 150
+    },
+    {
+      "asset": "germs",
+      "health": 5,
+      "frame": 5,
+      "x": 150,
+      "y": 300
+    },
+    {
+      "asset": "germs",
+      "health": 5,
+      "frame": 6,
+      "x": 300,
+      "y": 300
+    },
+    {
+      "asset": "germs",
+      "health": 5,
+      "frame": 7,
+      "x": 450,
+      "y": 300
+    },
+    {
+      "asset": "germs",
+      "health": 5,
+      "frame": 8,
+      "x": 600,
+      "y": 300
+    },
+    {
+      "asset": "germs",
+      "health": 5,
+      "frame": 9,
+      "x": 750,
+      "y": 300
+    },
+    {
+      "asset": "germs",
+      "health": 5,
+      "frame": 10,
+      "x": 450,
+      "y": 450
+    }
+  ]
+}

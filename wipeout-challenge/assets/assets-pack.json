@@ -1,0 +1,55 @@
+{
+  "level":[
+    {
+      "type": "text",
+      "key": "data",
+      "url": "assets/data/level01.json"
+    },
+    {
+      "type": "image",
+      "key": "title",
+      "url": "assets/images/ZOFLORA_XMAS-GAME_RIBBON_AW.png"
+    },
+    {
+      "type": "image",
+      "key": "background",
+      "url": "assets/images/rooms/kitchen.png"
+    },
+    {
+      "type": "image",
+      "key": "blood",
+      "url": "assets/images/blood.png"
+    },
+    {
+      "type": "image",
+      "key": "button-begin",
+      "url": "assets/images/button-begin.png"
+    },
+    {
+      "type": "spritesheet",
+      "key": "bug",
+      "url": "assets/images/bugs.png",
+      "frameWidth": 128,
+      "frameHeight": 128
+    },
+    {
+      "type": "spritesheet",
+      "key": "countdown",
+      "url": "assets/images/countdown.png",
+      "frameWidth": 442,
+      "frameHeight": 219
+    },
+    {
+      "type": "spritesheet",
+      "key": "germs",
+      "url": "assets/images/germs.png",
+      "frameWidth": 90,
+      "frameHeight": 90
+    },
+    {
+      "type": "audio",
+      "key": "hit",
+      "urls": ["assets/audio/hit.mp3","assets/audio/hit.ogg"]
+    }
+  ]
+}

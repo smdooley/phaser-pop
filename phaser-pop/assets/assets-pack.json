@@ -1,0 +1,54 @@
+{
+  "data":[
+    {
+      "type": "image",
+      "key": "elephant",
+      "url": "assets/images/elephant.png"
+    },
+    {
+      "type": "image",
+      "key": "giraffe",
+      "url": "assets/images/giraffe.png"
+    },
+    {
+      "type": "image",
+      "key": "hippo",
+      "url": "assets/images/hippo.png"
+    },
+    {
+      "type": "image",
+      "key": "monkey",
+      "url": "assets/images/monkey.png"
+    },
+    {
+      "type": "image",
+      "key": "panda",
+      "url": "assets/images/panda.png"
+    },
+    {
+      "type": "image",
+      "key": "parrot",
+      "url": "assets/images/parrot.png"
+    },
+    {
+      "type": "image",
+      "key": "penguin",
+      "url": "assets/images/penguin.png"
+    },
+    {
+      "type": "image",
+      "key": "pig",
+      "url": "assets/images/pig.png"
+    },
+    {
+      "type": "image",
+      "key": "rabbit",
+      "url": "assets/images/rabbit.png"
+    },
+    {
+      "type": "image",
+      "key": "snake",
+      "url": "assets/images/snake.png"
+    }
+  ]
+}
