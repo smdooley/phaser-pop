@@ -1,0 +1,19 @@
+{
+  "background": "background",
+  "germs": [
+    {
+      "asset": "germs",
+      "health": 10,
+      "frame": 0,
+      "x": 150,
+      "y": 150
+    },
+    {
+      "asset": "germs",
+      "health": 5,
+      "frame": 1,
+      "x": 300,
+      "y": 150
+    }
+  ]
+}

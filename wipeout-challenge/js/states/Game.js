@@ -5,7 +5,7 @@ TODO clock time is being taken from start of whole app and not just GameState
 **/
 
 Wipeout.GameState = {
-  
+
   init: function(){
     console.log('GameState', 'init');
 

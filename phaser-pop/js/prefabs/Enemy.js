@@ -1,7 +1,9 @@
 var PhaserPop = PhaserPop || {};
 
-PhaserPop.Germ = function(state, x, y, data){
+PhaserPop.Enemy = function(state, x, y, data){
   Phaser.Sprite.call(this, state.game, x, y, data.asset);
+
+  console.log('data', data);
 
   // store variables for reference
   this.state = state;
@@ -11,23 +13,27 @@ PhaserPop.Germ = function(state, x, y, data){
 
   // set anchor
   this.anchor.setTo(0.5);
+  this.scale.setTo(0.5);
 
   // enable input
   this.inputEnabled = true;
 
   // set input callback event
-  this.events.onInputDown.add(this.state.hitGerm, this.state);
+  this.events.onInputDown.add(this.state.hitEnemy, this.state);
 
   // enable physics
   this.game.physics.arcade.enable(this);
 
+  this.checkWorldBounds = true;
+  this.outOfBoundsKill = true;
+
   this.reset(x, y, data);
 };
 
-PhaserPop.Germ.prototype = Object.create(Phaser.Sprite.prototype);
-PhaserPop.Germ.prototype.constructor = PhaserPop.Germ;
+PhaserPop.Enemy.prototype = Object.create(Phaser.Sprite.prototype);
+PhaserPop.Enemy.prototype.constructor = PhaserPop.Enemy;
 
-PhaserPop.Germ.prototype.reset = function(x, y, data) {
+PhaserPop.Enemy.prototype.reset = function(x, y, data) {
   Phaser.Sprite.prototype.reset.call(this, x, y, data.health);
 
   // load texture
@@ -45,7 +51,7 @@ PhaserPop.Germ.prototype.reset = function(x, y, data) {
   this.frame = data.frame;
 }
 
-PhaserPop.Germ.prototype.damage = function(amount) {
+PhaserPop.Enemy.prototype.damage = function(amount) {
   Phaser.Sprite.prototype.damage.call(this, amount);
 
   // // initialize emitter
