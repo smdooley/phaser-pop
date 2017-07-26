@@ -1,16 +1,72 @@
 {
   "background": "background",
-  "germs": [
+  "enemies": [
     {
-      "asset": "germs",
+      "asset": "elephant",
       "health": 10,
       "frame": 0,
       "x": 150,
       "y": 150
     },
     {
-      "asset": "germs",
+      "asset": "giraffe",
+      "health": 9,
+      "frame": 1,
+      "x": 300,
+      "y": 150
+    },
+    {
+      "asset": "hippo",
+      "health": 8,
+      "frame": 1,
+      "x": 300,
+      "y": 150
+    },
+    {
+      "asset": "monkey",
+      "health": 7,
+      "frame": 1,
+      "x": 300,
+      "y": 150
+    },
+    {
+      "asset": "panda",
+      "health": 6,
+      "frame": 1,
+      "x": 300,
+      "y": 150
+    },
+    {
+      "asset": "parrot",
       "health": 5,
+      "frame": 1,
+      "x": 300,
+      "y": 150
+    },
+    {
+      "asset": "penguin",
+      "health": 4,
+      "frame": 1,
+      "x": 300,
+      "y": 150
+    },
+    {
+      "asset": "pig",
+      "health": 3,
+      "frame": 1,
+      "x": 300,
+      "y": 150
+    },
+    {
+      "asset": "rabbit",
+      "health": 2,
+      "frame": 1,
+      "x": 300,
+      "y": 150
+    },
+    {
+      "asset": "snake",
+      "health": 1,
       "frame": 1,
       "x": 300,
       "y": 150

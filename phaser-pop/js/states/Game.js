@@ -5,10 +5,12 @@ PhaserPop.GameState = {
     console.log('GameState', 'init');
 
     // constants
-    this.ENEMY_FREQUENCY = 5;
+    this.SPAWN_TIME = { min: 1, max: 4 };
+    // this.ENEMY_FREQUENCY = 2;
 
     // no gravity in a top-down game
-    this.game.physics.arcade.gravity.y = -500;
+    this.game.physics.startSystem(Phaser.Physics.ARCADE);
+    this.game.physics.arcade.gravity.y = 100;
   },
   create: function(){
     console.log('GameState', 'create');
@@ -89,9 +91,12 @@ PhaserPop.GameState = {
     return obj;
   },
   scheduleEnemyGeneration: function() {
-    this.enemyGenerationTimer.add(Phaser.Timer.SECOND * this.ENEMY_FREQUENCY, function(){
+    var time = this.game.rnd.between(this.SPAWN_TIME.min, this.SPAWN_TIME.max);
+
+    //this.enemyGenerationTimer.add(Phaser.Timer.SECOND * this.ENEMY_FREQUENCY, function(){
+    this.enemyGenerationTimer.add(Phaser.Timer.SECOND * time, function(){
       var x = 100;
-      var y = 100;
+      var y = this.game.world.height;
 
       this.addEnemy(x, y, { "asset": "elephant", "health": 10, "frame": 0, "x": 150, "y": 150 });
       this.scheduleEnemyGeneration();

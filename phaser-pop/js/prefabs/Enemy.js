@@ -3,8 +3,6 @@ var PhaserPop = PhaserPop || {};
 PhaserPop.Enemy = function(state, x, y, data){
   Phaser.Sprite.call(this, state.game, x, y, data.asset);
 
-  console.log('data', data);
-
   // store variables for reference
   this.state = state;
   this.game = state.game;
@@ -24,6 +22,8 @@ PhaserPop.Enemy = function(state, x, y, data){
   // enable physics
   this.game.physics.arcade.enable(this);
 
+  this.body.gravity.y = -150;
+
   this.checkWorldBounds = true;
   this.outOfBoundsKill = true;
 
@@ -39,14 +39,6 @@ PhaserPop.Enemy.prototype.reset = function(x, y, data) {
   // load texture
   this.loadTexture(data.asset);
 
-  // set animation frames
-  // this.animation = null;
-  // if(data.animation){
-  //   this.animation = data.asset + "Anim";
-  //   this.animations.add(this.animation, data.animation, 1, true);
-  //   this.play(this.animation);
-  // }
-
   // set start frame
   this.frame = data.frame;
 }
@@ -54,15 +46,9 @@ PhaserPop.Enemy.prototype.reset = function(x, y, data) {
 PhaserPop.Enemy.prototype.damage = function(amount) {
   Phaser.Sprite.prototype.damage.call(this, amount);
 
-  // // initialize emitter
-  // var emitter = this.game.add.emitter(this.x, this.y, 100);
-  // emitter.makeParticles('blood');
-  // emitter.minParticleSpeed.setTo(-100, -100);
-  // emitter.maxParticleSpeed.setTo(100, 100);
-  // emitter.gravity = 300;
-  // // burst/explode, lifespan, ignored if burst/explode, number of particles in burst
-  // emitter.start(true, 2000, null, 500);
+  // initialize emitter
 
+  // set attacked tween
   var attackedTween = this.game.add.tween(this);
   attackedTween.to({tint: 0xFF0000}, 200);
   attackedTween.onComplete.add(function(){
