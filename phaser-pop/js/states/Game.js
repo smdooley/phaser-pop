@@ -5,12 +5,12 @@ PhaserPop.GameState = {
     console.log('GameState', 'init');
 
     // constants
-    this.SPAWN_TIME = { min: 1, max: 4 };
-    // this.ENEMY_FREQUENCY = 2;
+    this.SPAWN_TIME = { min: 1, max: 2 };
+    this.TIME_LIMIT = 15;
 
     // no gravity in a top-down game
     this.game.physics.startSystem(Phaser.Physics.ARCADE);
-    this.game.physics.arcade.gravity.y = 100;
+    this.game.physics.arcade.gravity.y = 0;
   },
   create: function(){
     console.log('GameState', 'create');
@@ -18,14 +18,14 @@ PhaserPop.GameState = {
     // pool of enemies
     this.enemies = this.add.group();
 
-    // initialize timers
-    this.remainingSeconds = 30;
-    this.timer = this.game.time.events.loop(Phaser.Timer.SECOND, this.tick, this);
-    this.createTimer();
-
-    this.enemyGenerationTimer = this.game.time.create(false);
-    this.enemyGenerationTimer.start();
-    this.scheduleEnemyGeneration();
+    // // initialize timers
+    // this.remainingSeconds = 30;
+    // this.timer = this.game.time.events.loop(Phaser.Timer.SECOND, this.tick, this);
+    // this.createTimer();
+    //
+    // this.enemyGenerationTimer = this.game.time.create(false);
+    // this.enemyGenerationTimer.start();
+    // this.scheduleEnemyGeneration();
 
     // load level
     this.loadLevel();
@@ -34,7 +34,20 @@ PhaserPop.GameState = {
 
   },
   loadLevel: function() {
+    // load data
+    this.data = JSON.parse(this.game.cache.getText('data'));
 
+    // initialize variables
+    this.killedEnemies = 0;
+
+    // initialize timers
+    this.remainingSeconds = this.TIME_LIMIT;
+    this.timer = this.game.time.events.loop(Phaser.Timer.SECOND, this.tick, this);
+    this.createTimer();
+
+    this.enemyGenerationTimer = this.game.time.create(false);
+    this.enemyGenerationTimer.start();
+    this.scheduleEnemyGeneration();
   },
   createTimer: function(){
     var time = this.secondsToTime(this.remainingSeconds);
@@ -92,13 +105,12 @@ PhaserPop.GameState = {
   },
   scheduleEnemyGeneration: function() {
     var time = this.game.rnd.between(this.SPAWN_TIME.min, this.SPAWN_TIME.max);
+    var x = this.game.rnd.between(0.2 * this.game.world.width, 0.8 * this.game.world.width);
+    var y = this.game.world.height;
+    var nextEnemy = this.data.enemies[this.game.rnd.between(0, this.data.enemies.length-1)];
 
-    //this.enemyGenerationTimer.add(Phaser.Timer.SECOND * this.ENEMY_FREQUENCY, function(){
     this.enemyGenerationTimer.add(Phaser.Timer.SECOND * time, function(){
-      var x = 100;
-      var y = this.game.world.height;
-
-      this.addEnemy(x, y, { "asset": "elephant", "health": 10, "frame": 0, "x": 150, "y": 150 });
+      this.addEnemy(x, y, nextEnemy);
       this.scheduleEnemyGeneration();
     }, this);
   },
@@ -136,4 +148,7 @@ PhaserPop.GameState = {
       // }
     }
   },
+  gameOver: function() {
+    this.state.start('Game');
+  }
 }

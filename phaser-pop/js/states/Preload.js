@@ -9,6 +9,6 @@ PhaserPop.PreloadState = {
   },
   create: function(){
     console.log('PreloadState', 'create');
-    this.state.start('Title');
+    this.game.state.start('Title');
   }
 }

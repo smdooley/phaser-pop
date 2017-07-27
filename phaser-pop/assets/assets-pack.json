@@ -1,6 +1,11 @@
 {
   "data":[
     {
+      "type": "text",
+      "key": "data",
+      "url": "assets/data/level01.json"
+    },
+    {
       "type": "image",
       "key": "elephant",
       "url": "assets/images/elephant.png"

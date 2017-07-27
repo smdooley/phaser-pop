@@ -25,6 +25,6 @@ PhaserPop.BootState = {
   },
   create: function(){
     console.log('BootState', 'create');
-    this.state.start('Preload')
+    this.game.state.start('Preload');
   }
 }

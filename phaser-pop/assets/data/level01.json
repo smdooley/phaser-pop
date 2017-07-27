@@ -3,73 +3,83 @@
   "enemies": [
     {
       "asset": "elephant",
-      "health": 10,
+      "health": 5,
       "frame": 0,
       "x": 150,
-      "y": 150
+      "y": 150,
+      "gravity": { "min": 100, "max": 125 }
     },
     {
       "asset": "giraffe",
-      "health": 9,
-      "frame": 1,
-      "x": 300,
-      "y": 150
-    },
-    {
-      "asset": "hippo",
-      "health": 8,
-      "frame": 1,
-      "x": 300,
-      "y": 150
-    },
-    {
-      "asset": "monkey",
-      "health": 7,
-      "frame": 1,
-      "x": 300,
-      "y": 150
-    },
-    {
-      "asset": "panda",
-      "health": 6,
-      "frame": 1,
-      "x": 300,
-      "y": 150
-    },
-    {
-      "asset": "parrot",
-      "health": 5,
-      "frame": 1,
-      "x": 300,
-      "y": 150
-    },
-    {
-      "asset": "penguin",
       "health": 4,
       "frame": 1,
       "x": 300,
-      "y": 150
+      "y": 150,
+      "gravity": { "min": 125, "max": 150 }
+    },
+    {
+      "asset": "hippo",
+      "health": 5,
+      "frame": 1,
+      "x": 300,
+      "y": 150,
+      "gravity": { "min": 100, "max": 125 }
+    },
+    {
+      "asset": "monkey",
+      "health": 3,
+      "frame": 1,
+      "x": 300,
+      "y": 150,
+      "gravity": { "min": 150, "max": 175 }
+    },
+    {
+      "asset": "panda",
+      "health": 4,
+      "frame": 1,
+      "x": 300,
+      "y": 150,
+      "gravity": { "min": 125, "max": 150 }
+    },
+    {
+      "asset": "parrot",
+      "health": 2,
+      "frame": 1,
+      "x": 300,
+      "y": 150,
+      "gravity": { "min": 175, "max": 200 }
+    },
+    {
+      "asset": "penguin",
+      "health": 2,
+      "frame": 1,
+      "x": 300,
+      "y": 150,
+      "gravity": { "min": 175, "max": 200 }
     },
     {
       "asset": "pig",
       "health": 3,
       "frame": 1,
       "x": 300,
-      "y": 150
+      "y": 150,
+      "gravity": { "min": 150, "max": 175 }
     },
     {
       "asset": "rabbit",
       "health": 2,
-      "frame": 1,
+      "frame": 2,
       "x": 300,
-      "y": 150
+      "y": 150,
+      "gravity": { "min": 175, "max": 200 }
     },
     {
       "asset": "snake",
-      "health": 1,
+      "health": 2,
       "frame": 1,
       "x": 300,
-      "y": 150
+      "y": 150,
+      "gravity": { "min": 175, "max": 200 }
     }
   ]
 }

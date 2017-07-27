@@ -11,7 +11,7 @@ PhaserPop.Enemy = function(state, x, y, data){
 
   // set anchor
   this.anchor.setTo(0.5);
-  this.scale.setTo(0.5);
+  this.scale.setTo(0.25);
 
   // enable input
   this.inputEnabled = true;
@@ -22,7 +22,7 @@ PhaserPop.Enemy = function(state, x, y, data){
   // enable physics
   this.game.physics.arcade.enable(this);
 
-  this.body.gravity.y = -this.game.rnd.between(150, 200);
+  this.body.gravity.y = -this.game.rnd.between(data.gravity.min, data.gravity.max);
 
   this.checkWorldBounds = true;
   this.outOfBoundsKill = true;
