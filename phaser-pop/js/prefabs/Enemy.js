@@ -1,6 +1,8 @@
 var PhaserPop = PhaserPop || {};
 
 PhaserPop.Enemy = function(state, x, y, data){
+  "use strict";
+
   Phaser.Sprite.call(this, state.game, x, y, data.asset);
 
   // store variables for reference
@@ -34,6 +36,8 @@ PhaserPop.Enemy.prototype = Object.create(Phaser.Sprite.prototype);
 PhaserPop.Enemy.prototype.constructor = PhaserPop.Enemy;
 
 PhaserPop.Enemy.prototype.reset = function(x, y, data) {
+  "use strict";
+
   Phaser.Sprite.prototype.reset.call(this, x, y, data.health);
 
   // load texture
@@ -44,6 +48,8 @@ PhaserPop.Enemy.prototype.reset = function(x, y, data) {
 }
 
 PhaserPop.Enemy.prototype.damage = function(amount) {
+  "use strict";
+
   Phaser.Sprite.prototype.damage.call(this, amount);
 
   // initialize emitter

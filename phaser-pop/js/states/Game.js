@@ -2,6 +2,8 @@ var PhaserPop = PhaserPop || {};
 
 PhaserPop.GameState = {
   init: function(){
+    "use strict";
+
     console.log('GameState', 'init');
 
     // constants
@@ -13,10 +15,13 @@ PhaserPop.GameState = {
     this.game.physics.arcade.gravity.y = 0;
   },
   create: function(){
+    "use strict";
+
     console.log('GameState', 'create');
 
     // pool of enemies
     this.enemies = this.add.group();
+    this.specials = this.add.group();
 
     // // initialize timers
     // this.remainingSeconds = 30;
@@ -31,9 +36,11 @@ PhaserPop.GameState = {
     this.loadLevel();
   },
   update: function() {
-
+    "use strict";
   },
   loadLevel: function() {
+    "use strict";
+
     // load data
     this.data = JSON.parse(this.game.cache.getText('data'));
 
@@ -50,6 +57,8 @@ PhaserPop.GameState = {
     this.scheduleEnemyGeneration();
   },
   createTimer: function(){
+    "use strict";
+
     var time = this.secondsToTime(this.remainingSeconds);
 
     this.timeLabelBackground = this.game.add.graphics();
@@ -60,6 +69,8 @@ PhaserPop.GameState = {
     this.timeLabel.anchor.set(0, 0);
   },
   tick: function() {
+    "use strict";
+
     // update remaining time accordingly
     this.remainingSeconds--;
 
@@ -72,6 +83,8 @@ PhaserPop.GameState = {
     }
   },
   updateClock: function() {
+    "use strict";
+
     // get remaining time
     var time = this.secondsToTime(this.remainingSeconds);
 
@@ -79,6 +92,8 @@ PhaserPop.GameState = {
     this.timeLabel.text = "Time: " + time.m + ":" + time.s;
   },
   secondsToTime: function(seconds) {
+    "use strict";
+
     // round seconds for the following calculations
     var secs = Math.round(seconds);
 
@@ -104,6 +119,8 @@ PhaserPop.GameState = {
     return obj;
   },
   scheduleEnemyGeneration: function() {
+    "use strict";
+
     var time = this.game.rnd.between(this.SPAWN_TIME.min, this.SPAWN_TIME.max);
     var x = this.game.rnd.between(0.2 * this.game.world.width, 0.8 * this.game.world.width);
     var y = this.game.world.height;
@@ -115,6 +132,8 @@ PhaserPop.GameState = {
     }, this);
   },
   addEnemy: function(x, y, data){
+    "use strict";
+
     // get first dead enemy from pool
     var element = this.enemies.getFirstDead();
 
@@ -130,6 +149,7 @@ PhaserPop.GameState = {
     return element;
   },
   hitEnemy: function(enemy) {
+    "use strict";
 
     // play hit sound
     //this.hitSound.play();
@@ -149,6 +169,8 @@ PhaserPop.GameState = {
     }
   },
   gameOver: function() {
+    "use strict";
+
     this.state.start('Game');
   }
 }

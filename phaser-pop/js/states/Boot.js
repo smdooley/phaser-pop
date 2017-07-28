@@ -2,6 +2,8 @@ var PhaserPop = PhaserPop || {};
 
 PhaserPop.BootState = {
   init: function(){
+    "use strict";
+
     console.log('BootState', 'init');
 
     // set max pointers
@@ -21,9 +23,13 @@ PhaserPop.BootState = {
     this.game.physics.startSystem(Phaser.Physics.ARCADE);
   },
   preload: function(){
+    "use strict";
+
     console.log('BootState', 'preload');
   },
   create: function(){
+    "use strict";
+
     console.log('BootState', 'create');
     this.game.state.start('Preload');
   }

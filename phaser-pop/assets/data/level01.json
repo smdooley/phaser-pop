@@ -3,7 +3,8 @@
   "enemies": [
     {
       "asset": "elephant",
-      "health": 5,
+      "group": "special",
+      "health": 2,
       "frame": 0,
       "x": 150,
       "y": 150,
@@ -11,7 +12,8 @@
     },
     {
       "asset": "giraffe",
-      "health": 4,
+      "group": "special",
+      "health": 2,
       "frame": 1,
       "x": 300,
       "y": 150,
@@ -19,7 +21,8 @@
     },
     {
       "asset": "hippo",
-      "health": 5,
+      "group": "special",
+      "health": 2,
       "frame": 1,
       "x": 300,
       "y": 150,
@@ -27,7 +30,8 @@
     },
     {
       "asset": "monkey",
-      "health": 3,
+      "group": "special",
+      "health": 2,
       "frame": 1,
       "x": 300,
       "y": 150,
@@ -35,7 +39,8 @@
     },
     {
       "asset": "panda",
-      "health": 4,
+      "group": "special",
+      "health": 2,
       "frame": 1,
       "x": 300,
       "y": 150,
@@ -43,7 +48,8 @@
     },
     {
       "asset": "parrot",
-      "health": 2,
+      "group": "animal",
+      "health": 1,
       "frame": 1,
       "x": 300,
       "y": 150,
@@ -51,7 +57,8 @@
     },
     {
       "asset": "penguin",
-      "health": 2,
+      "group": "animal",
+      "health": 1,
       "frame": 1,
       "x": 300,
       "y": 150,
@@ -59,7 +66,8 @@
     },
     {
       "asset": "pig",
-      "health": 3,
+      "group": "special",
+      "health": 2,
       "frame": 1,
       "x": 300,
       "y": 150,
@@ -67,7 +75,8 @@
     },
     {
       "asset": "rabbit",
-      "health": 2,
+      "group": "animal",
+      "health": 1,
       "frame": 2,
       "x": 300,
       "y": 150,
@@ -75,11 +84,15 @@
     },
     {
       "asset": "snake",
-      "health": 2,
+      "group": "animal",
+      "health": 1,
       "frame": 1,
       "x": 300,
       "y": 150,
       "gravity": { "min": 175, "max": 200 }
     }
-  ]
+  ],
+  "coefficients": {
+    "modifier": 1.1
+  }
 }
